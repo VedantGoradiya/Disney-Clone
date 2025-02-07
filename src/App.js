@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Routes,
+} from "react-router-dom";
 import "./App.css";
 import { Login } from "./components/Login";
 
@@ -6,11 +11,9 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Switch>
-          <Route exect path="/">
-            <Login />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route path="/" element={<Login />} />
+        </Routes>
       </Router>
     </div>
   );
