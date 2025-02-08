@@ -1,3 +1,8 @@
+import firebase from "firebase/compat/app";
+import "firebase/compat/firestore"; // Import Firestore
+import "firebase/compat/auth"; // Import Auth
+import "firebase/compat/storage"; // Import Storage
+
 const firebaseConfig = {
   apiKey: "AIzaSyBpLexFY5GVp6Ez60zCfjYb2lMPKBpsJ3A",
   authDomain: "disneyplus-clone-2d1be.firebaseapp.com",
