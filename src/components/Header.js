@@ -172,13 +172,13 @@ export const Header = () => {
   `;
 
   useEffect(() => {
-    auth.onAuthStateChanged(async(user) => {
-      if(user){
-        setUser(user)
-        navigate('/home')
+    auth.onAuthStateChanged(async (user) => {
+      if (user) {
+        setUser(user);
+        navigate("/home");
       }
-    })
-  }, [userName])
+    });
+  }, [userName]);
 
   const handleAuth = () => {
     if (!userName) {
@@ -195,7 +195,7 @@ export const Header = () => {
         .signOut()
         .then(() => {
           dispatch(setSignOutState());
-          navigate('/')
+          navigate("/");
         })
         .catch((err) => alert(err.message));
     }
