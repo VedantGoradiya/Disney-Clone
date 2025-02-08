@@ -1,3 +1,4 @@
+import { auth, provider } from "../firebase";
 import React from "react";
 import { useEffect } from "react";
 import styled from "styled-components";
@@ -154,6 +155,17 @@ export const Header = () => {
       }
     }
   `;
+
+  const handleAuth = () => {
+    auth.signInWithPopup(provider)
+      .then((result) => {
+        console.log(result);
+        // setUser(result.user);
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  };
   return (
     <Nav>
       <Logo>
@@ -186,6 +198,7 @@ export const Header = () => {
           <span>SERIES</span>
         </a>
       </NavMenu>
+      <Login onClick={handleAuth}>Login</Login>
     </Nav>
   );
 };
