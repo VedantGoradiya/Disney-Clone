@@ -171,6 +171,15 @@ export const Header = () => {
     }
   `;
 
+  useEffect(() => {
+    auth.onAuthStateChanged(async(user) => {
+      if(user){
+        setUser(user)
+        navigate('/home')
+      }
+    })
+  }, [userName])
+
   const handleAuth = () => {
     if (!userName) {
       auth
